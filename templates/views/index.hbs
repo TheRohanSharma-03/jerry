@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  {{>links}}
+</head>
+<body>
+
+<div class="container">
+  <div class="container bg-primary">
+    <h2>Student Form</h2>
+  </div>
+  <form action="/data" method="POST">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    </div>
+    <div class="form-group">
+        <label for="City">City:</label>
+        <input type="text" class="form-control" id="city" placeholder="Enter City" name="city">
+    </div>
+    <div class="form-group">
+        <label for="state">State:</label>
+        <input type="text" class="form-control" id="state" placeholder="Enter state" name="state">
+    </div>
+    <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="text" class="form-control" id="phone" placeholder="Phone Number" name="phone">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+    </div>
+    <button type="Save" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+</body>
+</html>

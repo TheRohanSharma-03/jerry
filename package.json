@@ -1,0 +1,19 @@
+{
+  "name": "datadb",
+  "version": "1.0.0",
+  "description": "This is an experiment on mpngodb with nodejs. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "database"
+  ],
+  "author": "BhilaiTechnology",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "hbs": "^4.2.0",
+    "mongoose": "^7.0.3"
+  }
+}
