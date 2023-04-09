@@ -3,10 +3,8 @@ const Student = require("./src/models/models");
 const express = require("express");
 const path = require("path");
 const hbs = require("hbs");
-const serverless = require("serverless-http");
 
 const app = express();
-const router = express.Router();
 const port = process.env.PORT || 5000;
 
 const templatepath = path.join(__dirname,"./templates/views");
@@ -17,12 +15,11 @@ app.set("view engine","hbs");
 app.set("views",templatepath);
 hbs.registerPartials(partialspath);
 
-router.get("/",(req,res)=>{
+app.get("/",(req,res)=>{
     res.render("index");
 });
 
-app.use('/.netlify/functions/api',router);
-router.post("/data",async(req,res)=>{
+app.post("/data",async(req,res)=>{
     try{
         var name = req.body.name;
         var email = req.body.email;
@@ -47,7 +44,7 @@ router.post("/data",async(req,res)=>{
     }
 });
 
-router.get("/show",(req,res)=>{
+app.get("/show",(req,res)=>{
     const display = async() =>{
         const data = await Student.find();
         res.render("showdata",{data:data});
@@ -55,9 +52,6 @@ router.get("/show",(req,res)=>{
     display();
 });
 
-// app.listen(port,()=>{
-//     console.log(`Server Started http://localhost:${port}/`);
-// });
-
-module.exports = app;
-module.exports = serverless(app);
+app.listen(port,()=>{
+    console.log(`Server Started http://localhost:${port}/`);
+});
